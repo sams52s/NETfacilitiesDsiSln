@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XamForms.Controls;assembly=XamForms.Controls.Calendar"
+             x:Class="NETfacilitiesDsi.View.ContentView.Calender"
+             IsVisible="False">
+  <ContentView.Content>
+      <StackLayout>
+          
+          <StackLayout>
+          <controls:Calendar Padding="1,10"  
+                             
+                             EnableTitleMonthYearView="True"
+                             ShowInBetweenMonthLabels="True"
+                             
+                             DatesFontSize="14"
+                             BorderWidth="1"
+                             SelectedBorderWidth="1"   
+                             DisabledBorderColor="Black"  
+                               
+                             StartDay="Sunday"  
+                             TitleLabelTextColor="Gray"  
+                             TitleLeftArrowTextColor="Transparent"  
+                             TitleRightArrowTextColor="Transparent"
+                             SelectedDate="{Binding Date}"  
+                             SpecialDates="{Binding Attendances}"  
+                             DateCommand="{Binding DateChosen}"/>
+      </StackLayout>
+        </StackLayout>
+  </ContentView.Content>
+</ContentView>

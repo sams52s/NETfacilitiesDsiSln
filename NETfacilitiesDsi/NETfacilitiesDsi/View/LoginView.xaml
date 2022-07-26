@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModel="clr-namespace:NETfacilitiesDsi.ViewModel;assembly=NETfacilitiesDsi"
+             x:Class="NETfacilitiesDsi.View.LoginView"
+             x:DataType="viewModel:LoginViewModel"
+             IsInNativeLayout="False"
+             BackgroundColor="White"
+             
+             >
+    <ContentPage.Resources>
+        
+        <ResourceDictionary>
+            <OnPlatform x:Key="FontSize" x:TypeArguments="x:Double" Android="18" iOS="18" WinPhone="16" />
+            <Style TargetType="StackLayout">
+                <Setter Property="Spacing" Value="0" />
+                <Setter Property="Margin" Value="30" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"></Setter>
+
+                
+            </Style>
+            <Style TargetType="Frame">
+                <Setter Property="HasShadow" Value="True"/>
+                <Setter Property="Margin" Value="-30,0,-30,20" />
+                <Setter Property="Padding" Value="4" />
+                <Setter Property="BorderColor" Value="DarkGray" />
+                <Setter Property="CornerRadius" Value="5"/>
+                <Setter Property="HeightRequest" Value="40"/>
+
+            </Style>
+            <Style TargetType="Entry">
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="PlaceholderColor" Value="DimGray"/>
+                <Setter Property="Background" Value="Transparent"/>
+            </Style>
+            <Style TargetType="Grid">
+                <Setter Property="HorizontalOptions" Value="EndAndExpand"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="Margin" Value="-25,5"></Setter>
+            </Style>
+           <!-- <Style x:Key="EntryStyle" TargetType="{x:Type Entry}">
+                <Setter Property="behaviors:LineColorBehavior.ApplyLineColor" Value="True"/>
+                <Setter Property="behaviors:LineColorBehavior.LineColor" Value="{StaticResource BlackColor}"/>
+            </Style> -->
+           
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+      <StackLayout>
+            <Image Source="net_facilities_logo.png" Margin="0,0,0,-35" />
+            <Label x:Name="IncorrectFild" FontSize="16" Padding="30,24,30,0" IsVisible="False">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <FormattedString.Spans>
+                            <Span Text="Incorrect email" TextColor="HotPink"/>
+                        </FormattedString.Spans>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <StackLayout>
+                <Frame >
+                    <Entry
+                        x:Name="Email"
+                        Text="{Binding Email}"
+                        Keyboard="Email"
+                        Placeholder="Email"
+                        />
+                </Frame>
+                <Frame>
+                    <Entry
+                        x:Name="Password"
+                        Text="{Binding Password}"
+                        IsPassword="True"
+                        Placeholder="Password"
+                        />
+                </Frame>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="40" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition ></ColumnDefinition><ColumnDefinition ></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <CheckBox Grid.Row="0"  Color="DarkGray" HorizontalOptions="EndAndExpand" Margin="-30" />
+                    <Label  Grid.Row="0" Grid.Column="1" Text="Keep me signed in." CharacterSpacing="1" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" TextColor="Black" FontSize="14"/>
+                    <Button
+                        Grid.Row="1" Grid.Column="1"
+                        x:Name= "loginbtn" Text = "Login" 
+                        Command="{Binding LoginBtnClicked}" 
+                        HorizontalOptions="EndAndExpand" 
+                        Padding="5" FontSize="16" 
+                        FontAttributes="Bold" 
+                        TextColor="WhiteSmoke" 
+                        BackgroundColor="#5279b2" 
+                        CornerRadius="7"
+                        WidthRequest="250" 
+                        FontFamily="PJMedium">
+                    </Button>
+                </Grid>
+                <Button Text="Forgot your Password?" 
+                       HorizontalOptions="Center" FontSize="16"
+                        Padding="15" TextColor="#6a89a2"
+                        BackgroundColor="Transparent" 
+                        Command="{Binding FGPassBtnClicked}">
+                    </Button>
+            </StackLayout>
+
+      </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

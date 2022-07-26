@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NETfacilitiesDsi.View.CalendarView">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" TextColor="CornflowerBlue" Text="Dashboard" FontSize="12"/>
+                <Label Grid.Column="1" Text=">" TextColor="DarkGray" FontSize="7"/>
+                <Label Grid.Column="2" Text="Calender" TextColor="Gray" FontSize="12"/>
+            </Grid>
+            <Label Text="Calender"  FontSize="Title" TextColor="Gray" FontAttributes="Bold" HorizontalOptions="StartAndExpand" Padding="5,10,0,0"/>
+            <Grid BackgroundColor="Gray">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="180"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" TextColor="CornflowerBlue" ImageSource="" Text="FILTER" FontSize="18" HorizontalOptions="StartAndExpand" Margin="10,-6,-10,-6" WidthRequest="300" BackgroundColor="White"/>
+                   
+                <Button Grid.Column="1" Text="Reset" TextColor="DarkGray" FontSize="18" HorizontalOptions="EndAndExpand" Margin="-10,-6,10,-6" WidthRequest="300" BackgroundColor="White"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

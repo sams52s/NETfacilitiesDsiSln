@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:contentView="clr-namespace:NETfacilitiesDsi.View.ContentView;assembly=NETfacilitiesDsi"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms" 
+             xmlns:viewmodel="clr-namespace:NETfacilitiesDsi.ViewModel" x:DataType="viewmodel:HomePageViewModel"
+             IsInNativeLayout="False"
+             Title="Project Thunder Testing Domain"
+             BackgroundColor="#ffffff"
+             x:Class="NETfacilitiesDsi.View.HomePage">
+    <ContentPage.Resources>
+
+        <ResourceDictionary>
+            <OnPlatform x:Key="FontSize" x:TypeArguments="x:Double" Android="24" iOS="18" WinPhone="16" />
+            <Style TargetType="Grid">
+                <Setter Property="Margin" Value="10,2,10,5"></Setter>
+            </Style>
+            <Style  TargetType="buttons:SfButton">
+                <Setter Property="FontSize" Value="15" />
+                <Setter Property="CornerRadius" Value="5" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="ImageAlignment" Value="Top" />
+                <Setter Property="ShowIcon" Value="True" />
+                <Setter Property="ImageWidth" Value="50" />
+                <Setter Property="HeightRequest" Value="95" />
+                <Setter Property="WidthRequest" Value="135" />
+                <Setter Property="Margin" Value="5" />
+                <Setter Property="TextColor" Value="Black" />
+
+                <!-- <Setter Property="BackgroundColor" Value="{Binding BtnBackgroundColor}" />
+                <Setter Property="Command" Value="{Binding Button_Clicked}" />-->
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <ScrollView>
+
+        <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="180" ></ColumnDefinition>
+                    <ColumnDefinition Width="180"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout Grid.Column="0" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20"></ColumnDefinition>
+                            <ColumnDefinition Width="80"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Image
+                            Grid.Column="0"
+                            HorizontalOptions="EndAndExpand"
+                            Source="plusbLACK.png" />
+                        <Button Grid.Column="1"
+                           BackgroundColor="Transparent"
+                           TextColor="#6a89a2"
+                           HorizontalOptions="StartAndExpand"
+                           FontSize="18"
+                           Text="FILTER" />
+                    </Grid>
+                </StackLayout>
+                <Button Grid.Column="1"
+                        BackgroundColor="Transparent"
+                        TextColor="#6a89a2"
+                        Text="RESET"
+                        FontSize="18"
+                        HorizontalOptions="EndAndExpand" />
+            </Grid>
+            <StackLayout Margin="5,-30">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="70" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="160" />
+                        <ColumnDefinition Width="160" />
+                        <ColumnDefinition Width="40" />
+                    </Grid.ColumnDefinitions>
+
+                    <Button Grid.Column="0"
+                            Text="MY ACTIVITY"
+                            FontSize="18"
+                            FontAttributes="Bold"
+                            TextColor="OrangeRed"
+                            BackgroundColor="Transparent" />
+                    <Button Grid.Column="1"
+                            Text="ALL ACTIVITY"
+                            FontSize="18"
+                            FontAttributes="Bold"
+                            TextColor="CornflowerBlue"
+                            BackgroundColor="Transparent" />
+                    <Button Grid.Column="2" ImageSource="plus.png" BackgroundColor="Transparent" HorizontalOptions="EndAndExpand" />
+                </Grid>
+            </StackLayout>
+            <ScrollView Orientation="Horizontal" BackgroundColor="#90dadbe0" HeightRequest="110" Margin="10">
+                <FlexLayout Direction="Row" x:Name="ButtonContainer" HeightRequest="110" >
+                </FlexLayout>
+            </ScrollView>
+          <!--  <StackLayout> 
+                <contentView:WorkOrderStatusCustomButton x:Name="WorkOrderStatusCustomButton"/>
+            </StackLayout>-->
+            <StackLayout>
+                <contentView:WorkOrderListView x:Name="overall" Perametar="Overall"/>
+                <contentView:WorkOrderListView x:Name="overdue" Perametar="Overdue"  />
+                <contentView:WorkOrderListView x:Name="today" Perametar="Today"/>
+                <contentView:WorkOrderListView x:Name="pyramid" Perametar="Pyramid"/>
+                <contentView:Graph x:Name="graph"/>
+                <!-- <contentView:Calender x:Name="calender"/>-->
+                
+            </StackLayout>
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

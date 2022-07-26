@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NETfacilitiesDsi.View.ContentView.Graph"
+             IsVisible="False">
+  <ContentView.Content>
+      <StackLayout>
+          <Label Text="Graph"  FontSize="Title" TextColor="CornflowerBlue" FontAttributes="Bold" HorizontalOptions="StartAndExpand"/>
+          <Grid>
+              <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="8*"/>
+                  <ColumnDefinition Width="*"/>
+                  <ColumnDefinition Width="*"/>
+              </Grid.ColumnDefinitions>
+              <Button HorizontalOptions="EndAndExpand" BackgroundColor="Aqua" CornerRadius="50" WidthRequest="25" HeightRequest="30" Grid.Column="2"/>
+                <Button HorizontalOptions="EndAndExpand" BackgroundColor="Red" CornerRadius="50" WidthRequest="25" HeightRequest="30" Grid.Column="1"/>
+                <Button HorizontalOptions="EndAndExpand" BackgroundColor="Blue" CornerRadius="50" WidthRequest="25" HeightRequest="30" Grid.Column="0"/>
+            </Grid>
+
+          <Label Text="WORK ORDERS BY STATUS" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize=" 18" TextColor="Black"/>
+
+        </StackLayout>
+  </ContentView.Content>
+</ContentView>
