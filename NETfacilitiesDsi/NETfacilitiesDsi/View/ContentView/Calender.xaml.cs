@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XamForms.Controls;
 
 namespace NETfacilitiesDsi.View.ContentView
 {
@@ -54,6 +55,11 @@ namespace NETfacilitiesDsi.View.ContentView
                     System.Diagnostics.Debug.WriteLine(obj as DateTime?);
                 });
             }
+        }
+
+        private void Calendar_OnDateClicked(object sender, DateTimeEventArgs e)
+        {
+            
         }
     }
 }

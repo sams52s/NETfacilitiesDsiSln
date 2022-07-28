@@ -15,6 +15,7 @@ namespace NETfacilitiesDsi.View
         public CalendarView()
         {
             InitializeComponent();
+            
         }
     }
 }

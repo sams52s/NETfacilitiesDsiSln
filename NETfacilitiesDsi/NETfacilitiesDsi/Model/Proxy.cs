@@ -1,5 +1,6 @@
 ﻿using NETfacilitiesDsi.Enum;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -182,25 +183,72 @@ namespace NETfacilitiesDsi.Model
 
         #endregion
 
+        #region CalenderInfos
 
-        #region GetCalenderInfo
-        public static void GetCalendarInfo(ICalendarInfoHandler callbackHandler, int date)
+        public static void GetCalenderInfo(ICalendarInfoHandler callbackHandler)
         {
-            Dictionary<CalendarInfo, string> calendarInfo = new Dictionary<CalendarInfo, string>();
+            List<CalendarInfo> calInfo =new List<CalendarInfo>();
+            calInfo.Add(new CalendarInfo()
+            {
+                Titel1 = "WORK ORDER",
+                details1 = "17941931",
+                Titel2 = "ORIGINATOR",
+                details2 = "customer01",
+                Titel3 = "SITE:SUB-SITE,AREA",
+                details3 = "AlaskaStTimeZone:Subsite2:area2",
+                Titel4 = "LOCATION NOTES",
+                details4 = "Suite area2 - test",
+                Titel5 = "SERVICE TYPE",
+                details5 = "Access Cards",
+                Titel6 = "TASK NAME",
+                details6 = "Ab cd ef"
+            });
+            calInfo.Add(new CalendarInfo()
+            {
+                Titel1 = "WORK ORDER",
+                details1 = "15941230",
+                Titel2 = "ORIGINATOR",
+                details2 = "customer02",
+                Titel3 = "SITE:SUB-SITE,AREA",
+                details3 = "AlaskaStTimeZone:Subsite2:area3",
+                Titel4 = "LOCATION NOTES",
+                details4 = "Suite area3 - test",
+                Titel5 = "SERVICE TYPE",
+                details5 = "Access Cards",
+                Titel6 = "TASK NAME",
+                details6 = "Ab XY ef"
+            });
+            calInfo.Add(new CalendarInfo()
+            {
+                Titel1 = "WORK ORDER",
+                details1 = "57943039",
+                Titel2 = "ORIGINATOR",
+                details2 = "customer03",
+                Titel3 = "SITE:SUB-SITE,AREA",
+                details3 = "AlaskaStTimeZone:Subsite2:area4",
+                Titel4 = "LOCATION NOTES",
+                details4 = "Suite area4 - test",
+                Titel5 = "SERVICE TYPE",
+                details5 = "Access Cards",
+                Titel6 = "TASK NAME",
+                details6 = "Ab cd CVc"
+            });
+            callbackHandler.CalendarInfoDetailes(calInfo);
 
-            CalendarInfoTitelName WorkOrder = CalendarInfoTitelName.WorkOrder;
-            CalendarInfoTitelName Originator = CalendarInfoTitelName.Originator;
-            CalendarInfoTitelName Area = CalendarInfoTitelName.Area;
-            CalendarInfoTitelName LocationNotes = CalendarInfoTitelName.LocationNotes;
-            CalendarInfoTitelName ServiceType = CalendarInfoTitelName.ServiceType;
-            CalendarInfoTitelName TaskName = CalendarInfoTitelName.TaskName;
-
-            //calendarInfo.Add(WorkOrder, "17941931");
-            //callbackHandler.CalendarInfoDetailes(calendarInfo);
+            
         }
 
+        public static void GetCalenderInfoByDate(List<CalendarInfo> calendarInfos, DatePicker date)
+        {
+            Dictionary<List<CalendarInfo>,DatePicker> Infos = new Dictionary<List<CalendarInfo>,DatePicker>();
+
+            Infos.Add(calendarInfos, date);
+        }
 
         #endregion
 
+
+
+
     }
-}
+} 

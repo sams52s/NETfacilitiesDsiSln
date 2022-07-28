@@ -110,7 +110,7 @@
                 <contentView:WorkOrderStatusCustomButton x:Name="WorkOrderStatusCustomButton"/>
             </StackLayout>-->
             <StackLayout>
-                <contentView:WorkOrderListView x:Name="overall" Perametar="Overall"/>
+                <contentView:WorkOrderListView x:Name="overall" Perametar="Overall" />
                 <contentView:WorkOrderListView x:Name="overdue" Perametar="Overdue"  />
                 <contentView:WorkOrderListView x:Name="today" Perametar="Today"/>
                 <contentView:WorkOrderListView x:Name="pyramid" Perametar="Pyramid"/>

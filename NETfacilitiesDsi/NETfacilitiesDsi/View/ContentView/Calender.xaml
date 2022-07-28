@@ -12,6 +12,7 @@
                              
                              EnableTitleMonthYearView="True"
                              ShowInBetweenMonthLabels="True"
+                             DateClicked="Calendar_OnDateClicked"
                              
                              DatesFontSize="14"
                              BorderWidth="1"

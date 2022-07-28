@@ -6,7 +6,8 @@ namespace NETfacilitiesDsi.Model
 {
     public interface ICalendarInfoHandler
     {
-        void CalendarInfoDetailes(Dictionary<CalendarInfo, string> calendarInfoDictionary);
+        void CalendarInfoDetailes(List<CalendarInfo> calendarInfos);
         void CalendarInfoDetailesUnloaded(string errorMessage);
     }
 }
+
